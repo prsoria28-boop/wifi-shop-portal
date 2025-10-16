@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WiFi Shop - Información</title>
+  <link rel="stylesheet" href="css/info-style.css" />
+</head>
+<body>
+  <div class="info-background">
+    <img src="img/fondo-dia.png" alt="Fondo WiFi Shop Día" class="background-image" />
+  </div>
+
+  <div class="info-container">
+    <header class="info-header">
+      <img src="img/logo.png" alt="Logo WiFi Shop" class="info-logo" />
+      <h1>WiFi Shop</h1>
+      <p class="slogan">Tu refugio urbano en la terminal · Your urban refuge in the terminal</p>
+    </header>
+
+    <section class="info-description">
+      <p><strong>ES:</strong> En nuestra tienda puedes encontrar de todo: aseo personal, tortas, café, licuados, recargas, ¡y por supuesto, internet WiFi! Todo al alcance de tus manos.</p>
+      <p><strong>EN:</strong> In our store you’ll find everything: personal care, sandwiches, coffee, smoothies, mobile top-ups, and of course, WiFi internet! All at your fingertips.</p>
+    </section>
+
+    <section class="info-grid">
+      <div class="info-item">
+        <img src="img/aseo.png" alt="Aseo Personal" />
+        <h2>🧼 Aseo Personal / Personal Care</h2>
+      </div>
+      <div class="info-item">
+        <img src="img/tortas.png" alt="Tortas" />
+        <h2>🥪 Tortas / Sandwiches</h2>
+      </div>
+      <div class="info-item">
+        <img src="img/cafe.png" alt="Café" />
+        <h2>☕ Café / Coffee</h2>
+      </div>
+      <div class="info-item">
+        <img src="img/licuado.png" alt="Licuados" />
+        <h2>🥤 Licuados / Smoothies</h2>
+      </div>
+      <div class="info-item">
+        <img src="img/recarga.png" alt="Recargas" />
+        <h2>📲 Recargas / Mobile Top-ups</h2>
+      </div>
+      <div class="info-item">
+        <img src="img/internet.png" alt="Internet WiFi" />
+        <h2>🌐 Internet WiFi</h2>
+      </div>
+    </section>
+
+    <section class="info-pricing">
+      <h2>💻 Tarifas de Internet / Internet Rates</h2>
+      <ul>
+        <li>30 minutos / 30 minutes — <strong>$5.00</strong></li>
+        <li>1 hora / 1 hour — <strong>$10.00</strong></li>
+        <li>Día / Day — <strong>$30.00</strong></li>
+        <li>Semana / Week — <strong>$85.00</strong></li>
+        <li>Mes / Month — <strong>$190.00</strong></li>
+      </ul>
+    </section>
+
+    <section class="info-hours">
+      <h2>🕘 Horario / Hours</h2>
+      <p>9:00 AM – 6:00 PM</p>
+    </section>
+
+    <footer class="info-footer">
+      <p>Gracias por apoyar a WiFi Shop · Thank you for supporting WiFi Shop</p>
+    </footer>
+  </div>
+
+  <!-- Ventana emergente al terminar trial -->
+  <script>
+    const trialWarningTime = 240000; // 4 minutos (de 5)
+    setTimeout(() => {
+      alert("⏳ Tu tiempo gratuito está por terminar. Visítanos en WiFi Shop para comprar tu acceso completo. / Your free time is almost up. Visit WiFi Shop to purchase full access.");
+    }, trialWarningTime);
+  </script>
+</body>
+</html>
