@@ -9,24 +9,18 @@
   <link rel="stylesheet" href="info-style.css" />
 </head>
 <body>
-  <!-- Fondo adaptativo -->
-  <div class="info-background"></div>
-
   <div class="info-container">
-    <!-- Encabezado -->
     <header class="info-header">
       <img src="logo.png" alt="Logo WiFi Shop" class="info-logo" />
       <h1>WiFi Shop</h1>
       <p class="slogan">Tu refugio urbano en la terminal · Your urban refuge in the terminal</p>
     </header>
 
-    <!-- Descripción -->
     <section class="info-description">
       <p><strong>ES:</strong> En nuestra tienda puedes encontrar de todo: aseo personal, tortas, café, licuados, recargas, ¡y por supuesto, internet WiFi! Todo al alcance de tus manos.</p>
       <p><strong>EN:</strong> In our store you’ll find everything: personal care, sandwiches, coffee, smoothies, mobile top-ups, and of course, WiFi internet! All at your fingertips.</p>
     </section>
 
-    <!-- Productos / Servicios -->
     <section class="info-grid">
       <div class="info-item">
         <img src="aseo.png" alt="Aseo Personal" />
@@ -54,7 +48,6 @@
       </div>
     </section>
 
-    <!-- Tarifas -->
     <section class="info-pricing">
       <h2>💻 Tarifas de Internet / Internet Rates</h2>
       <ul>
@@ -66,13 +59,11 @@
       </ul>
     </section>
 
-    <!-- Horario -->
     <section class="info-hours">
       <h2>🕘 Horario / Hours</h2>
       <p>9:00 AM – 6:00 PM</p>
     </section>
 
-    <!-- Pie -->
     <footer class="info-footer">
       <p>Gracias por apoyar a WiFi Shop · Thank you for supporting WiFi Shop</p>
     </footer>
@@ -88,18 +79,17 @@
     </div>
   </div>
 
-  <!-- Script del aviso -->
+  <!-- Script: aviso + modo día/noche -->
   <script>
-    const trialWarningTime = 240000; // 4 minutos (de 5)
+    // Modal aviso
+    const trialWarningTime = 240000;
     const modal = document.getElementById("trialModal");
+    function closeModal() { modal.style.display = "none"; }
+    setTimeout(() => { modal.style.display = "flex"; }, trialWarningTime);
 
-    function closeModal() {
-      modal.style.display = "none";
-    }
-
-    setTimeout(() => {
-      modal.style.display = "flex";
-    }, trialWarningTime);
+    // Modo día/noche automático
+    const hour = new Date().getHours();
+    document.body.classList.add(hour >= 18 || hour < 6 ? "night-mode" : "day-mode");
   </script>
 </body>
 </html>
