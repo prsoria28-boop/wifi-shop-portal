@@ -1,195 +1,114 @@
-/* ================================
-   ESTILO PROFESIONAL MEJORADO
-   Fondo visible + diseño transparente
-   ================================ */
-
-/* ----------------------------- */
-/* RESET Y BASE */
-/* ----------------------------- */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* { margin:0; padding:0; box-sizing:border-box; }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  color: #fff;
-  background: url("img/fondo-dia.png") no-repeat center center fixed;
-  background-size: cover;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  overflow-x: hidden;
+  font-family:'Poppins', sans-serif;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  transition: background 0.8s ease, color 0.6s ease;
+  overflow-x:hidden;
 }
 
-/* ----------------------------- */
-/* CONTENEDOR PRINCIPAL */
-/* ----------------------------- */
+/* ----------- MODOS ----------- */
+body.day-mode {
+  background:url("fondo-dia.png") no-repeat center center fixed;
+  background-size:cover;
+  color:#222;
+}
+body.night-mode {
+  background:url("fondo-noche.png") no-repeat center center fixed;
+  background-size:cover;
+  color:#f0f0f0;
+}
+
+/* ----------- CONTENEDOR ----------- */
 .info-container {
-  width: 90%;
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 30px;
-  color: #fff;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+  width:90%;
+  max-width:900px;
+  margin:40px auto;
+  padding:30px;
+  text-shadow:0 1px 3px rgba(0,0,0,0.7);
 }
 
-/* ----------------------------- */
-/* CABECERA */
-/* ----------------------------- */
-.info-header {
-  text-align: center;
-  margin-bottom: 40px;
-  animation: fadeInDown 1.2s ease;
-}
+/* ----------- CABECERA ----------- */
+.info-header { text-align:center; margin-bottom:40px; animation:fadeInDown 1.2s ease; }
+.info-header img { width:120px; margin-bottom:15px; }
+.info-header h1 { font-size:2.2em; letter-spacing:1px; color:#00aaff; text-transform:uppercase; font-weight:700; }
 
-.info-header img {
-  width: 120px;
-  margin-bottom: 15px;
-}
+/* ----------- DESCRIPCIÓN ----------- */
+.info-description { text-align:center; margin-bottom:25px; font-size:1.1em; line-height:1.6; }
 
-.info-header h1 {
-  font-size: 2.2em;
-  letter-spacing: 1px;
-  color: #00aaff;
-  text-transform: uppercase;
-  font-weight: 700;
-}
-
-/* ----------------------------- */
-/* DESCRIPCIÓN PRINCIPAL */
-/* ----------------------------- */
-.info-description {
-  text-align: center;
-  margin-bottom: 25px;
-  font-size: 1.1em;
-  line-height: 1.6;
-  color: #f0f0f0;
-  animation: fadeIn 1.3s ease;
-}
-
-/* ----------------------------- */
-/* GRID DE INFORMACIÓN */
-/* ----------------------------- */
+/* ----------- GRID ----------- */
 .info-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 25px;
-  margin-top: 30px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+  gap:25px;
+  margin-top:30px;
 }
-
 .info-item {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 15px;
-  padding: 15px;
-  text-align: center;
-  backdrop-filter: blur(3px);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  background:rgba(255,255,255,0.1);
+  border-radius:15px;
+  padding:15px;
+  text-align:center;
+  backdrop-filter:blur(3px);
+  transition:transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
 }
+.info-item:hover { transform:translateY(-5px); background:rgba(255,255,255,0.25); box-shadow:0 4px 15px rgba(0,0,0,0.3); }
+.info-item h2 { color:#00aaff; font-size:1.3em; margin-bottom:10px; }
 
-.info-item:hover {
-  transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+/* ----------- PRECIOS / HORARIOS ----------- */
+.info-pricing,.info-hours { text-align:center; margin-top:40px; }
+.info-pricing h2,.info-hours h2 { color:#00aaff; font-size:1.5em; margin-bottom:15px; }
+
+/* ----------- FOOTER ----------- */
+.info-footer { text-align:center; margin-top:50px; font-size:0.95em; animation:fadeInUp 1.5s ease; }
+
+/* ----------- MODAL ----------- */
+.modal {
+  display:none;
+  position:fixed;
+  z-index:100;
+  left:0; top:0;
+  width:100%; height:100%;
+  background:rgba(0,0,0,0.65);
+  justify-content:center; align-items:center;
 }
-
-.info-item h2 {
-  color: #00aaff;
-  font-size: 1.3em;
-  margin-bottom: 10px;
+.modal-content {
+  background:rgba(255,255,255,0.15);
+  backdrop-filter:blur(6px);
+  padding:25px 35px;
+  border-radius:20px;
+  text-align:center;
+  color:#fff;
+  width:90%; max-width:400px;
+  animation:fadeIn 0.6s ease;
 }
-
-.info-item p {
-  color: #f0f0f0;
-  font-size: 1em;
-  line-height: 1.5;
+.modal-button {
+  margin-top:15px;
+  padding:10px 25px;
+  background:#00aaff;
+  border:none;
+  border-radius:10px;
+  color:#fff;
+  font-weight:600;
+  cursor:pointer;
+  transition:background 0.3s ease;
 }
+.modal-button:hover { background:#0090dd; }
 
-/* ----------------------------- */
-/* SECCIÓN DE PRECIOS / HORARIOS */
-/* ----------------------------- */
-.info-pricing,
-.info-hours {
-  text-align: center;
-  margin-top: 40px;
-  color: #f0f0f0;
+/* ----------- ANIMACIONES ----------- */
+@keyframes fadeIn { from{opacity:0; transform:translateY(10px);} to{opacity:1; transform:translateY(0);} }
+@keyframes fadeInDown { from{opacity:0; transform:translateY(-15px);} to{opacity:1; transform:translateY(0);} }
+@keyframes fadeInUp { from{opacity:0; transform:translateY(15px);} to{opacity:1; transform:translateY(0);} }
+
+/* ----------- RESPONSIVE ----------- */
+@media (max-width:768px) {
+  .info-container{ padding:20px; }
+  .info-header h1{ font-size:1.8em; }
 }
-
-.info-pricing h2,
-.info-hours h2 {
-  color: #00aaff;
-  font-size: 1.5em;
-  margin-bottom: 15px;
-}
-
-/* ----------------------------- */
-/* PIE DE PÁGINA */
-/* ----------------------------- */
-.info-footer {
-  text-align: center;
-  margin-top: 50px;
-  font-size: 0.95em;
-  color: #e0e0e0;
-  animation: fadeInUp 1.5s ease;
-}
-
-.info-footer a {
-  color: #00aaff;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.info-footer a:hover {
-  color: #66ccff;
-}
-
-/* ----------------------------- */
-/* ANIMACIONES */
-/* ----------------------------- */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeInDown {
-  from { opacity: 0; transform: translateY(-15px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(15px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* ----------------------------- */
-/* RESPONSIVE */
-/* ----------------------------- */
-@media (max-width: 768px) {
-  .info-container {
-    padding: 20px;
-  }
-
-  .info-header h1 {
-    font-size: 1.8em;
-  }
-
-  .info-item {
-    padding: 12px;
-  }
-}
-
-@media (max-width: 480px) {
-  .info-header img {
-    width: 90px;
-  }
-
-  .info-header h1 {
-    font-size: 1.5em;
-  }
-
-  .info-description {
-    font-size: 1em;
-  }
+@media (max-width:480px){
+  .info-header img{ width:90px; }
+  .info-header h1{ font-size:1.5em; }
+  .info-description{ font-size:1em; }
 }
