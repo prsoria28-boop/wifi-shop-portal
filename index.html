@@ -1,252 +1,105 @@
-/* ============================================================
-   WiFi Shop - Estilo Profesional Urbano/Moderno
-   Archivo: info-style.css
-   ============================================================ */
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="WiFi Shop: tu refugio urbano con café, tortas, recargas, WiFi y más. ¡Todo en un solo lugar!">
+  <title>WiFi Shop - Información</title>
+  <link rel="stylesheet" href="info-style.css" />
+</head>
+<body>
+  <!-- Fondo adaptativo -->
+  <div class="info-background"></div>
 
-/* ----------------------------- */
-/* CONFIGURACIÓN GENERAL */
-/* ----------------------------- */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+  <div class="info-container">
+    <!-- Encabezado -->
+    <header class="info-header">
+      <img src="logo.png" alt="Logo WiFi Shop" class="info-logo" />
+      <h1>WiFi Shop</h1>
+      <p class="slogan">Tu refugio urbano en la terminal · Your urban refuge in the terminal</p>
+    </header>
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+    <!-- Descripción -->
+    <section class="info-description">
+      <p><strong>ES:</strong> En nuestra tienda puedes encontrar de todo: aseo personal, tortas, café, licuados, recargas, ¡y por supuesto, internet WiFi! Todo al alcance de tus manos.</p>
+      <p><strong>EN:</strong> In our store you’ll find everything: personal care, sandwiches, coffee, smoothies, mobile top-ups, and of course, WiFi internet! All at your fingertips.</p>
+    </section>
 
-body {
-  font-family: "Poppins", sans-serif;
-  background: #f0f2f5;
-  color: #222;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
-  overflow-x: hidden;
-}
+    <!-- Productos / Servicios -->
+    <section class="info-grid">
+      <div class="info-item">
+        <img src="aseo.png" alt="Aseo Personal" />
+        <h2>🧼 Aseo Personal / Personal Care</h2>
+      </div>
+      <div class="info-item">
+        <img src="tortas.png" alt="Tortas" />
+        <h2>🥪 Tortas / Sandwiches</h2>
+      </div>
+      <div class="info-item">
+        <img src="cafe.png" alt="Café" />
+        <h2>☕ Café / Coffee</h2>
+      </div>
+      <div class="info-item">
+        <img src="licuado.png" alt="Licuados" />
+        <h2>🥤 Licuados / Smoothies</h2>
+      </div>
+      <div class="info-item">
+        <img src="recarga.png" alt="Recargas" />
+        <h2>📲 Recargas / Mobile Top-ups</h2>
+      </div>
+      <div class="info-item">
+        <img src="internet.png" alt="Internet WiFi" />
+        <h2>🌐 Internet WiFi</h2>
+      </div>
+    </section>
 
-/* ----------------------------- */
-/* FONDO ADAPTABLE */
-/* ----------------------------- */
-.info-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url("fondo-dia.png") no-repeat center center/cover;
-  filter: brightness(0.9);
-  z-index: -1;
-}
+    <!-- Tarifas -->
+    <section class="info-pricing">
+      <h2>💻 Tarifas de Internet / Internet Rates</h2>
+      <ul>
+        <li>30 minutos / 30 minutes — <strong>$5.00</strong></li>
+        <li>1 hora / 1 hour — <strong>$10.00</strong></li>
+        <li>Día / Day — <strong>$30.00</strong></li>
+        <li>Semana / Week — <strong>$85.00</strong></li>
+        <li>Mes / Month — <strong>$190.00</strong></li>
+      </ul>
+    </section>
 
-/* ----------------------------- */
-/* CONTENEDOR PRINCIPAL */
-/* ----------------------------- */
-.info-container {
-  width: 90%;
-  max-width: 900px;
-  background: rgba(255, 255, 255, 0.92);
-  border-radius: 20px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  margin: 40px auto;
-  padding: 30px;
-  backdrop-filter: blur(6px);
-}
+    <!-- Horario -->
+    <section class="info-hours">
+      <h2>🕘 Horario / Hours</h2>
+      <p>9:00 AM – 6:00 PM</p>
+    </section>
 
-/* ----------------------------- */
-/* ENCABEZADO */
-/* ----------------------------- */
-.info-header {
-  text-align: center;
-  margin-bottom: 25px;
-}
+    <!-- Pie -->
+    <footer class="info-footer">
+      <p>Gracias por apoyar a WiFi Shop · Thank you for supporting WiFi Shop</p>
+    </footer>
+  </div>
 
-.info-logo {
-  width: 100px;
-  height: auto;
-  margin-bottom: 10px;
-}
+  <!-- Modal de aviso -->
+  <div class="modal" id="trialModal">
+    <div class="modal-content">
+      <h3>⏳ Tiempo gratuito por terminar</h3>
+      <p>Visítanos en <strong>WiFi Shop</strong> para adquirir acceso completo.<br>
+         Your free time is almost up — visit WiFi Shop to purchase full access.</p>
+      <button class="modal-button" onclick="closeModal()">Entendido / OK</button>
+    </div>
+  </div>
 
-.info-header h1 {
-  font-size: 2em;
-  color: #0078ff;
-  letter-spacing: 1px;
-}
+  <!-- Script del aviso -->
+  <script>
+    const trialWarningTime = 240000; // 4 minutos (de 5)
+    const modal = document.getElementById("trialModal");
 
-.slogan {
-  font-size: 0.95em;
-  color: #444;
-  font-style: italic;
-}
+    function closeModal() {
+      modal.style.display = "none";
+    }
 
-/* ----------------------------- */
-/* DESCRIPCIÓN */
-/* ----------------------------- */
-.info-description {
-  margin-bottom: 25px;
-  text-align: center;
-  line-height: 1.6;
-  font-size: 1em;
-}
-
-.info-description p {
-  margin-bottom: 10px;
-}
-
-/* ----------------------------- */
-/* GRID DE PRODUCTOS */
-/* ----------------------------- */
-.info-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 20px;
-  margin: 25px 0;
-}
-
-.info-item {
-  background: #fff;
-  border-radius: 15px;
-  padding: 15px;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.info-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-}
-
-.info-item img {
-  width: 70px;
-  height: auto;
-  margin-bottom: 8px;
-}
-
-.info-item h2 {
-  font-size: 0.95em;
-  color: #333;
-}
-
-/* ----------------------------- */
-/* TARIFAS */
-/* ----------------------------- */
-.info-pricing {
-  text-align: center;
-  margin: 30px 0;
-}
-
-.info-pricing h2 {
-  color: #0078ff;
-  margin-bottom: 10px;
-  font-size: 1.4em;
-}
-
-.info-pricing ul {
-  list-style: none;
-  font-size: 1em;
-  line-height: 1.8;
-}
-
-.info-pricing li strong {
-  color: #28a745;
-}
-
-/* ----------------------------- */
-/* HORARIOS */
-/* ----------------------------- */
-.info-hours {
-  text-align: center;
-  margin: 20px 0;
-}
-
-.info-hours h2 {
-  color: #0078ff;
-  font-size: 1.3em;
-  margin-bottom: 5px;
-}
-
-/* ----------------------------- */
-/* PIE DE PÁGINA */
-/* ----------------------------- */
-.info-footer {
-  text-align: center;
-  margin-top: 30px;
-  font-size: 0.9em;
-  color: #666;
-}
-
-/* ----------------------------- */
-/* MODAL PERSONALIZADO */
-/* ----------------------------- */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 100;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.6);
-  justify-content: center;
-  align-items: center;
-}
-
-.modal-content {
-  background: #fff;
-  padding: 25px;
-  border-radius: 12px;
-  text-align: center;
-  max-width: 380px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-  animation: fadeIn 0.4s ease;
-}
-
-.modal-content h3 {
-  color: #0078ff;
-  margin-bottom: 10px;
-}
-
-.modal-content p {
-  margin-bottom: 15px;
-}
-
-.modal-button {
-  background: #0078ff;
-  color: #fff;
-  border: none;
-  padding: 10px 18px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.modal-button:hover {
-  background: #005fcc;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1); }
-}
-
-/* ----------------------------- */
-/* RESPONSIVIDAD */
-/* ----------------------------- */
-@media (max-width: 600px) {
-  .info-container {
-    padding: 20px;
-  }
-
-  .info-header h1 {
-    font-size: 1.6em;
-  }
-
-  .info-item img {
-    width: 60px;
-  }
-
-  .info-pricing ul {
-    font-size: 0.95em;
-  }
-}
+    setTimeout(() => {
+      modal.style.display = "flex";
+    }, trialWarningTime);
+  </script>
+</body>
+</html>
