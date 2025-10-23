@@ -22,19 +22,37 @@ body.night-mode {
   color:#f0f0f0;
 }
 
+/* ----------- BOTÓN DE TEMA ----------- */
+.theme-toggle {
+  position:fixed;
+  top:15px;
+  right:15px;
+  background:rgba(255,255,255,0.3);
+  border:none;
+  border-radius:50%;
+  width:48px;
+  height:48px;
+  font-size:1.4em;
+  cursor:pointer;
+  backdrop-filter:blur(4px);
+  transition:background 0.3s ease, transform 0.3s ease;
+  z-index:10;
+}
+.theme-toggle:hover { background:rgba(255,255,255,0.6); transform:scale(1.1); }
+
 /* ----------- CONTENEDOR ----------- */
 .info-container {
   width:90%;
   max-width:900px;
-  margin:40px auto;
+  margin:60px auto;
   padding:30px;
   text-shadow:0 1px 3px rgba(0,0,0,0.7);
 }
 
 /* ----------- CABECERA ----------- */
 .info-header { text-align:center; margin-bottom:40px; animation:fadeInDown 1.2s ease; }
-.info-header img { width:120px; margin-bottom:15px; }
-.info-header h1 { font-size:2.2em; letter-spacing:1px; color:#00aaff; text-transform:uppercase; font-weight:700; }
+.info-logo { width:120px; margin-bottom:15px; }
+.info-header h1 { font-size:2.2em; color:#00aaff; text-transform:uppercase; font-weight:700; }
 
 /* ----------- DESCRIPCIÓN ----------- */
 .info-description { text-align:center; margin-bottom:25px; font-size:1.1em; line-height:1.6; }
@@ -57,7 +75,7 @@ body.night-mode {
 .info-item:hover { transform:translateY(-5px); background:rgba(255,255,255,0.25); box-shadow:0 4px 15px rgba(0,0,0,0.3); }
 .info-item h2 { color:#00aaff; font-size:1.3em; margin-bottom:10px; }
 
-/* ----------- PRECIOS / HORARIOS ----------- */
+/* ----------- SECCIONES ----------- */
 .info-pricing,.info-hours { text-align:center; margin-top:40px; }
 .info-pricing h2,.info-hours h2 { color:#00aaff; font-size:1.5em; margin-bottom:15px; }
 
