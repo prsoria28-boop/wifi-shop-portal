@@ -7,13 +7,12 @@
   <meta name="description" content="WiFi Shop: tu refugio urbano con café, tortas, recargas, WiFi y más. ¡Todo en un solo lugar!">
   <title>WiFi Shop - Información</title>
   <link rel="stylesheet" href="info-style.css" />
-  <link rel="icon" href="logo.png" type="image/png" />
 </head>
 <body>
-  <!-- Botón modo día/noche -->
-  <button id="themeToggle" class="theme-toggle" aria-label="Cambiar tema">🌙</button>
+  <!-- Fondo fijo -->
+  <div class="info-background"></div>
 
-  <main class="info-container">
+  <div class="info-container">
     <header class="info-header">
       <img src="logo.png" alt="Logo WiFi Shop" class="info-logo" />
       <h1>WiFi Shop</h1>
@@ -26,30 +25,30 @@
     </section>
 
     <section class="info-grid">
-      <article class="info-item">
+      <div class="info-item">
         <img src="aseo.png" alt="Aseo Personal" />
         <h2>🧼 Aseo Personal / Personal Care</h2>
-      </article>
-      <article class="info-item">
+      </div>
+      <div class="info-item">
         <img src="tortas.png" alt="Tortas" />
         <h2>🥪 Tortas / Sandwiches</h2>
-      </article>
-      <article class="info-item">
+      </div>
+      <div class="info-item">
         <img src="cafe.png" alt="Café" />
         <h2>☕ Café / Coffee</h2>
-      </article>
-      <article class="info-item">
+      </div>
+      <div class="info-item">
         <img src="licuado.png" alt="Licuados" />
         <h2>🥤 Licuados / Smoothies</h2>
-      </article>
-      <article class="info-item">
+      </div>
+      <div class="info-item">
         <img src="recarga.png" alt="Recargas" />
         <h2>📲 Recargas / Mobile Top-ups</h2>
-      </article>
-      <article class="info-item">
+      </div>
+      <div class="info-item">
         <img src="internet.png" alt="Internet WiFi" />
         <h2>🌐 Internet WiFi</h2>
-      </article>
+      </div>
     </section>
 
     <section class="info-pricing">
@@ -71,9 +70,9 @@
     <footer class="info-footer">
       <p>Gracias por apoyar a WiFi Shop · Thank you for supporting WiFi Shop</p>
     </footer>
-  </main>
+  </div>
 
-  <!-- Modal de aviso -->
+  <!-- Modal -->
   <div class="modal" id="trialModal">
     <div class="modal-content">
       <h3>⏳ Tiempo gratuito por terminar</h3>
@@ -83,40 +82,13 @@
     </div>
   </div>
 
-  <!-- Script -->
+  <!-- Script del aviso -->
   <script>
-    // Modal aviso
-    const trialWarningTime = 240000; // 4 min de prueba
+    // Mostrar aviso luego de 4 minutos
+    const trialWarningTime = 240000;
     const modal = document.getElementById("trialModal");
     function closeModal() { modal.style.display = "none"; }
     setTimeout(() => { modal.style.display = "flex"; }, trialWarningTime);
-
-    // Modo día/noche automático y manual
-    const body = document.body;
-    const hour = new Date().getHours();
-    const themeToggle = document.getElementById("themeToggle");
-    const savedTheme = localStorage.getItem("theme");
-
-    if (savedTheme) {
-      body.classList.add(savedTheme);
-      themeToggle.textContent = savedTheme === "night-mode" ? "🌞" : "🌙";
-    } else {
-      const defaultTheme = (hour >= 18 || hour < 6) ? "night-mode" : "day-mode";
-      body.classList.add(defaultTheme);
-      themeToggle.textContent = defaultTheme === "night-mode" ? "🌞" : "🌙";
-    }
-
-    themeToggle.addEventListener("click", () => {
-      if (body.classList.contains("day-mode")) {
-        body.classList.replace("day-mode", "night-mode");
-        themeToggle.textContent = "🌞";
-        localStorage.setItem("theme", "night-mode");
-      } else {
-        body.classList.replace("night-mode", "day-mode");
-        themeToggle.textContent = "🌙";
-        localStorage.setItem("theme", "day-mode");
-      }
-    });
   </script>
 </body>
 </html>
