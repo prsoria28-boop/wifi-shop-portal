@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="WiFi Shop: tu refugio urbano con café, tortas, recargas, WiFi y más. ¡Todo en un solo lugar!">
+  <meta name="description" content="WiFi Shop: tu refugio urbano con café, tortas, recargas, WiFi y más. ¡Todo en un solo lugar!" />
   <title>WiFi Shop - Información</title>
   <link rel="stylesheet" href="info-style.css" />
 </head>
@@ -13,7 +13,7 @@
   <div class="info-background"></div>
 
   <!-- Contenido principal -->
-  <div class="info-container fade-in">
+  <main class="info-container fade-in">
     <header class="info-header">
       <img src="logo.png" alt="Logo WiFi Shop" class="info-logo" />
       <h1>WiFi Shop</h1>
@@ -71,25 +71,34 @@
     <footer class="info-footer fade-in">
       <p>Gracias por apoyar a WiFi Shop · Thank you for supporting WiFi Shop</p>
     </footer>
-  </div>
+  </main>
 
-  <!-- Modal -->
-  <div class="modal" id="trialModal">
+  <!-- Modal accesible -->
+  <div class="modal" id="trialModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDesc">
     <div class="modal-content">
-      <h3>⏳ Tiempo gratuito por terminar</h3>
-      <p>Visítanos en <strong>WiFi Shop</strong> para adquirir acceso completo.<br>
-         Your free time is almost up — visit WiFi Shop to purchase full access.</p>
-      <button class="modal-button" onclick="closeModal()">Entendido / OK</button>
+      <h3 id="modalTitle">⏳ Tiempo gratuito por terminar</h3>
+      <p id="modalDesc">
+        Visítanos en <strong>WiFi Shop</strong> para adquirir acceso completo.<br>
+        Your free time is almost up — visit WiFi Shop to purchase full access.
+      </p>
+      <button class="modal-button" type="button" onclick="closeModal()">Entendido / OK</button>
     </div>
   </div>
 
   <!-- Script del aviso -->
   <script>
-    // Mostrar aviso luego de 4 minutos
-    const trialWarningTime = 240000;
+    const trialWarningTime = 240000; // 4 minutos
     const modal = document.getElementById("trialModal");
-    function closeModal() { modal.style.display = "none"; }
-    setTimeout(() => { modal.style.display = "flex"; }, trialWarningTime);
+
+    function closeModal() {
+      modal.style.display = "none";
+      document.body.style.overflow = "auto";
+    }
+
+    setTimeout(() => {
+      modal.style.display = "flex";
+      document.body.style.overflow = "hidden";
+    }, trialWarningTime);
   </script>
 </body>
 </html>
